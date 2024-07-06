@@ -43,7 +43,7 @@ void remove_node(Linkedlist* list, void* content, f_content_comparison fcc, f_co
 
 void remove_at(Linkedlist* list, size_t index, f_content_destruction fcd); // Removes the node at the specified position in the list.
 
-void traverse(Linkedlist* list, f_content_destruction func); // Applies a function to each node in the list, useful for operations like printing or modifying values.
+void traverse(Linkedlist* list, f_content_traversal func); // Applies a function to each node in the list, useful for operations like printing or modifying values.
 
 void* to_array(Linkedlist* list, size_t elementsSize); // Converts the linked list into an array of its values.
 
