@@ -124,20 +124,9 @@ void* to_array(Linkedlist* list, size_t elementsSize) {
     return ret;
 }
 
-Linkedlist* to_list(void* array, size_t elementsSize, size_t arraySize) {
-    size_t nElements = arraySize / elementsSize;
-    Linkedlist* ret = create_node();
-    memcpy(ret->content, array, elementsSize);
-    Linkedlist* retfor = ret;
-    for (int i = 1; i < nElements; i++) {
-        push_back(retfor, ((unsigned char *)array) + i * elementsSize, elementsSize);
-        if (retfor->next == NULL) continue;
-        else {
-            retfor = retfor->next;
-        }
-    }
-    return ret;
-}
+
+
+
 
 
 
