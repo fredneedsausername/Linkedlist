@@ -124,7 +124,23 @@ void* to_array(Linkedlist* list, size_t elementsSize) {
     return ret;
 }
 
+void clone_content(Linkedlist* node, void* content, size_t contentSize) {
+    node->content = malloc(contentSize);
+    memcpy(node->content, content, contentSize);
+}
 
+Linkedlist* to_list(void* array, size_t arraySize, size_t elementsSize) {
+    Linkedlist* ret = create_node();
+    clone_content(ret, array, elementsSize);
+    Linkedlist* temp = ret;
+    size_t nElements = arraySize / elementsSize;
+    for (int i = 1; i < nElements; i++) {
+        temp->next = create_node();
+        temp = temp->next;
+        clone_content(temp, ( (unsigned char *)array ) + i * elementsSize, elementsSize);
+    }
+    return ret;
+}
 
 
 
