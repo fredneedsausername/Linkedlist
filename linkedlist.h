@@ -47,10 +47,6 @@ void traverse(Linkedlist* list, f_content_traversal func); // Applies a function
 
 void* to_array(Linkedlist* list, size_t elementsSize); // Converts the linked list into an array of its values.
 
-/*
+void clone_content(Linkedlist* node, void* content, size_t contentSize); // Clones the content into the node.
 
-reverse(list): Reverses the order of nodes in the list.
-sort(list, compare): Sorts the list according to the comparison function provided.
-
-
-*/
+Linkedlist* to_list(void* array, size_t arraySize, size_t elementsSize); // Returns an initialized list with the elements provided.
